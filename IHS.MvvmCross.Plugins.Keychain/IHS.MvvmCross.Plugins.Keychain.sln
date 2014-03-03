@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHS.MvvmCross.Plugins.Keychain", "IHS.MvvmCross.Plugins.Keychain\IHS.MvvmCross.Plugins.Keychain.csproj", "{37A89484-2AD5-4BC9-951A-8AC233382529}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHS.MvvmCross.Plugins.Keychain.Touch", "IHS.MvvmCross.Plugins.Keychain.Touch\IHS.MvvmCross.Plugins.Keychain.Touch.csproj", "{F6305AF2-9006-4325-9AB5-D185707BBE05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37A89484-2AD5-4BC9-951A-8AC233382529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37A89484-2AD5-4BC9-951A-8AC233382529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37A89484-2AD5-4BC9-951A-8AC233382529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37A89484-2AD5-4BC9-951A-8AC233382529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6305AF2-9006-4325-9AB5-D185707BBE05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6305AF2-9006-4325-9AB5-D185707BBE05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6305AF2-9006-4325-9AB5-D185707BBE05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6305AF2-9006-4325-9AB5-D185707BBE05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
