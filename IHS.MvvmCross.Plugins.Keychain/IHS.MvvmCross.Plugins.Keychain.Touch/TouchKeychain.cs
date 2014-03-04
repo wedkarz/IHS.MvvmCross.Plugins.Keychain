@@ -67,5 +67,28 @@ namespace IHS.MvvmCross.Plugins.Keychain.Touch
         {
             throw new NotImplementedException();
         }
+
+        public LoginDetails GetLoginDetails(string serviceName)
+        {
+            var record = new SecRecord(SecKind.GenericPassword)
+            {
+                Service = serviceName
+            };
+
+            SecStatusCode status;
+            var match = SecKeyChain.QueryAsRecord(record, out status);
+            if (status == SecStatusCode.Success)
+            {
+                var loginDetails = new LoginDetails()
+                {
+                    Password = NSString.FromData(match.ValueData, NSStringEncoding.UTF8),
+                    Username = match.Account
+                };
+
+                return loginDetails;
+            }
+
+            return null;
+        }
     }
 }

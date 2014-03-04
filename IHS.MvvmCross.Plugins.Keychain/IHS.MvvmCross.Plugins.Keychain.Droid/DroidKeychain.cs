@@ -23,6 +23,11 @@ namespace IHS.MvvmCross.Plugins.Keychain.Droid
         {
             throw new NotImplementedException();
         }
+
+        public LoginDetails GetLoginDetails(string serviceName)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class Plugin : IMvxPlugin

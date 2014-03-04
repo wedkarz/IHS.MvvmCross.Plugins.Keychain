@@ -7,6 +7,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHS.MvvmCross.Plugins.Keych
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHS.MvvmCross.Plugins.Keychain.Touch", "IHS.MvvmCross.Plugins.Keychain.Touch\IHS.MvvmCross.Plugins.Keychain.Touch.csproj", "{F6305AF2-9006-4325-9AB5-D185707BBE05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHS.MvvmCross.Plugins.Keychain.Droid", "IHS.MvvmCross.Plugins.Keychain.Droid\IHS.MvvmCross.Plugins.Keychain.Droid.csproj", "{C461123F-F90A-4562-BBA6-B8FCC153256A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{ECA5EA11-ABE7-4DFC-AEDB-B7BB577345A8}"
+	ProjectSection(SolutionItems) = preProject
+		Common\IHS.MvvmCross.Plugins.Keychain.nuspec = Common\IHS.MvvmCross.Plugins.Keychain.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "monotouch", "monotouch", "{426534FD-E6C9-4B23-99B2-AF8CE0CB7016}"
+	ProjectSection(SolutionItems) = preProject
+		Common\monotouch\KeychainPluginBootstrap.cs.pp = Common\monotouch\KeychainPluginBootstrap.cs.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "monodroid", "monodroid", "{048301F1-8198-42E7-861E-270B14B0E986}"
+	ProjectSection(SolutionItems) = preProject
+		Common\monoandroid\KeychainPluginBootstrap.cs.pp = Common\monoandroid\KeychainPluginBootstrap.cs.pp
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +38,16 @@ Global
 		{F6305AF2-9006-4325-9AB5-D185707BBE05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6305AF2-9006-4325-9AB5-D185707BBE05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6305AF2-9006-4325-9AB5-D185707BBE05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C461123F-F90A-4562-BBA6-B8FCC153256A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C461123F-F90A-4562-BBA6-B8FCC153256A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C461123F-F90A-4562-BBA6-B8FCC153256A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C461123F-F90A-4562-BBA6-B8FCC153256A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{426534FD-E6C9-4B23-99B2-AF8CE0CB7016} = {ECA5EA11-ABE7-4DFC-AEDB-B7BB577345A8}
+		{048301F1-8198-42E7-861E-270B14B0E986} = {ECA5EA11-ABE7-4DFC-AEDB-B7BB577345A8}
 	EndGlobalSection
 EndGlobal

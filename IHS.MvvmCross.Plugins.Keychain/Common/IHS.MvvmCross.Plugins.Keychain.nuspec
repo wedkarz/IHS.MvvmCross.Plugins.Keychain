@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>IHS.MvvmCross.Plugins.Keychain</id>
+    <version>0.0.5</version>
+    <title>MvvmCross - Keychain Plugin</title>
+    <authors>Artur Rybak</authors>
+    <projectUrl>https://github.com/wedkarz/IHS.MvvmCross.Plugins.Keychain</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>MvvmCross plugin for keychain simple handling</description>
+    <releaseNotes />
+    <copyright />
+    <tags>mvvmcross xamarin mvvm keychain</tags>
+    <dependencies>
+      <dependency id="MvvmCross.HotTuna.CrossCore" version="3.1.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <!-- Core -->
+    <file src="..\IHS.MvvmCross.Plugins.Keychain\bin\Release\IHS.MvvmCross.Plugins.Keychain.dll" target="lib\portable-net45+sl4+wp71+win8+monoandroid+monotouch\IHS.MvvmCross.Plugins.Keychain.dll" />
+
+    <!-- Droid -->
+    <file src="monoandroid\KeychainPluginBootstrap.cs.pp" target="content\monoandroid\Bootstrap\KeychainPluginBootstrap.cs.pp" />
+    <file src="..\IHS.MvvmCross.Plugins.Keychain.Droid\bin\Release\IHS.MvvmCross.Plugins.Keychain.Droid.dll" target="lib\monoandroid\IHS.MvvmCross.Plugins.Keychain.Droid.dll" />
+    <file src="..\IHS.MvvmCross.Plugins.Keychain\bin\Release\IHS.MvvmCross.Plugins.Keychain.dll" target="lib\monoandroid\IHS.MvvmCross.Plugins.Keychain.dll" />
+
+    <!-- Touch -->
+    <file src="monotouch\KeychainPluginBootstrap.cs.pp" target="content\monotouch\Bootstrap\KeychainPluginBootstrap.cs.pp" />
+    <file src="..\IHS.MvvmCross.Plugins.Keychain.Touch\bin\iPhone\Release\IHS.MvvmCross.Plugins.Keychain.Touch.dll" target="lib\monotouch\IHS.MvvmCross.Plugins.Keychain.Touch.dll" />
+    <file src="..\IHS.MvvmCross.Plugins.Keychain\bin\Release\IHS.MvvmCross.Plugins.Keychain.dll" target="lib\monotouch\IHS.MvvmCross.Plugins.Keychain.dll" />
+
+  </files>
+</package>
