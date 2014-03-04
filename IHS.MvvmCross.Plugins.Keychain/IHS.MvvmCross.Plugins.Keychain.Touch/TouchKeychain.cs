@@ -25,7 +25,7 @@ namespace IHS.MvvmCross.Plugins.Keychain.Touch
             {
                 var newAtributes = new SecRecord(SecKind.GenericPassword)
                 {
-                    ValueData = NSData.FromString(password, NSStringEncoding.UTF8)
+                    ValueData = password != null ? NSData.FromString(password, NSStringEncoding.UTF8) : null
                 };
 
                 updateCode = SecKeyChain.Update(match, newAtributes);
@@ -36,7 +36,7 @@ namespace IHS.MvvmCross.Plugins.Keychain.Touch
                 {
                     Service = serviceName,
                     Account = account,
-                    ValueData = NSData.FromString(password, NSStringEncoding.UTF8)
+                    ValueData = password != null ? NSData.FromString(password, NSStringEncoding.UTF8) : null
                 };
 
                 updateCode = SecKeyChain.Add(newRecord);
@@ -55,7 +55,7 @@ namespace IHS.MvvmCross.Plugins.Keychain.Touch
 
             SecStatusCode status;
             var match = SecKeyChain.QueryAsRecord(record, out status);
-            if (status == SecStatusCode.Success)
+            if (status == SecStatusCode.Success && match.ValueData != null)
             {
                 return NSString.FromData(match.ValueData, NSStringEncoding.UTF8);
             }
@@ -65,7 +65,7 @@ namespace IHS.MvvmCross.Plugins.Keychain.Touch
 
         public bool DeletePassword(string serviceName, string account)
         {
-            throw new NotImplementedException();
+            return SetPassword(null, serviceName, account);
         }
 
         public LoginDetails GetLoginDetails(string serviceName)
