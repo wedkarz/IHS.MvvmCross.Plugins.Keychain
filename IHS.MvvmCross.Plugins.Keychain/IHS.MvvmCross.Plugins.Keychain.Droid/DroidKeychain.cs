@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using Android.Content;
 using Android.Runtime;
+using Cirrious.CrossCore;
+using Cirrious.CrossCore.Droid;
+using Java.IO;
 using Java.Security;
 using Javax.Crypto;
 
@@ -13,20 +15,25 @@ namespace IHS.MvvmCross.Plugins.Keychain.Droid
 {
     public class DroidKeychain : IKeychain
     {
-        private readonly Context _context;
         private KeyStore _keyStore;
         KeyStore.PasswordProtection _passwordProtection;
 
         static readonly object fileLock = new object();
 
-        const string FileName = "MvvmCross.Plugins.Keychain";
+        const string FileName = "Xamarin.Social.Accounts";
         static readonly char[] Password = "3295043EA18CA264B2C40E0B72051DEF2D07AD2B4593F43DDDE1515A7EC32617".ToCharArray();
         
         private const string PASSWORD_KEY = "password";
 
-        public DroidKeychain(Context context)
+        private Context _context;
+        private Context Context
         {
-            _context = context;
+            get { return _context ?? (_context = Mvx.Resolve<IMvxAndroidGlobals>().ApplicationContext); }
+            set { _context = value; }
+        }
+
+        public DroidKeychain()
+        {
             _keyStore = KeyStore.GetInstance(KeyStore.DefaultType);
             _passwordProtection = new KeyStore.PasswordProtection(Password);
 
@@ -34,7 +41,7 @@ namespace IHS.MvvmCross.Plugins.Keychain.Droid
             {
                 lock (fileLock)
                 {
-                    using (var s = context.OpenFileInput(FileName))
+                    using (var s = Context.OpenFileInput(FileName))
                     {
                         _keyStore.Load(s, Password);
                     }
@@ -140,7 +147,7 @@ namespace IHS.MvvmCross.Plugins.Keychain.Droid
         {
             lock (fileLock)
             {
-                using (var s = _context.OpenFileOutput(FileName, FileCreationMode.Private))
+                using (var s = Context.OpenFileOutput(FileName, FileCreationMode.Private))
                 {
                     _keyStore.Store(s, Password);
                 }

@@ -6,5 +6,6 @@
         string GetPassword(string serviceName, string account);
         bool DeletePassword(string serviceName, string account);
         LoginDetails GetLoginDetails(string serviceName);
+        bool DeleteAccount(string serviceName, string account);
     }
 }

@@ -8,7 +8,7 @@ namespace IHS.MvvmCross.Plugins.Keychain.Droid
     {
         public void Load()
         {
-            Mvx.RegisterSingleton(() => new DroidKeychain(Application.Context));
+            Mvx.RegisterType<IKeychain, DroidKeychain>();
         }
     }
 }

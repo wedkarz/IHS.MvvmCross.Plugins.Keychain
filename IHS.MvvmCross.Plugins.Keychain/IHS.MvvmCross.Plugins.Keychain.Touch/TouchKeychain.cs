@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using MonoTouch.Foundation;
 using MonoTouch.Security;
 
@@ -11,36 +8,20 @@ namespace IHS.MvvmCross.Plugins.Keychain.Touch
     {
         public bool SetPassword(string password, string serviceName, string account)
         {
-            var updateCode = SecStatusCode.NotAvailable;
-
             var record = new SecRecord(SecKind.GenericPassword)
             {
                 Service = serviceName,
                 Account = account
             };
 
-            SecStatusCode status;
-            var match = SecKeyChain.QueryAsRecord(record, out status);
-            if (status == SecStatusCode.Success)
+            var newRecord = new SecRecord(SecKind.GenericPassword)
             {
-                var newAtributes = new SecRecord(SecKind.GenericPassword)
-                {
-                    ValueData = password != null ? NSData.FromString(password, NSStringEncoding.UTF8) : null
-                };
+                Service = serviceName,
+                Account = account,
+                ValueData = password != null ? NSData.FromString(password, NSStringEncoding.UTF8) : null
+            };
 
-                updateCode = SecKeyChain.Update(match, newAtributes);
-            } 
-            else if (status == SecStatusCode.ItemNotFound)
-            {
-                var newRecord = new SecRecord(SecKind.GenericPassword)
-                {
-                    Service = serviceName,
-                    Account = account,
-                    ValueData = password != null ? NSData.FromString(password, NSStringEncoding.UTF8) : null
-                };
-
-                updateCode = SecKeyChain.Add(newRecord);
-            }
+            var updateCode = SecKeyChain.Add(newRecord);
 
             return updateCode == SecStatusCode.Success;
         }
@@ -65,7 +46,7 @@ namespace IHS.MvvmCross.Plugins.Keychain.Touch
 
         public bool DeletePassword(string serviceName, string account)
         {
-            return SetPassword(null, serviceName, account);
+            return SetPassword(String.Empty, serviceName, account);
         }
 
         public LoginDetails GetLoginDetails(string serviceName)
@@ -89,6 +70,19 @@ namespace IHS.MvvmCross.Plugins.Keychain.Touch
             }
 
             return null;
+        }
+
+        public bool DeleteAccount(string serviceName, string account)
+        {
+            var record = new SecRecord(SecKind.GenericPassword)
+            {
+                Service = serviceName,
+                Account = account
+            };
+
+            var removalStatus = SecKeyChain.Remove(record);
+
+            return removalStatus == SecStatusCode.Success;
         }
     }
 }
