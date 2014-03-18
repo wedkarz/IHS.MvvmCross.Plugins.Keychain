@@ -22,7 +22,7 @@ namespace IHS.MvvmCross.Plugins.Keychain.Droid
 
         const string FileName = "Xamarin.Social.Accounts";
         static readonly char[] Password = "3295043EA18CA264B2C40E0B72051DEF2D07AD2B4593F43DDDE1515A7EC32617".ToCharArray();
-        
+
         private const string PASSWORD_KEY = "password";
 
         private Context _context;
@@ -62,9 +62,9 @@ namespace IHS.MvvmCross.Plugins.Keychain.Droid
             }
             else
             {
-                storedAccount = new LoginDetails() {Password = password, Username = account};
+                storedAccount = new LoginDetails() { Password = password, Username = account };
             }
-            
+
             Save(storedAccount, serviceName);
 
             return true;
@@ -93,6 +93,17 @@ namespace IHS.MvvmCross.Plugins.Keychain.Droid
             var storedAccount = FindAccountsForService(serviceName).FirstOrDefault();
 
             return storedAccount;
+        }
+
+        public bool DeleteAccount(string serviceName, string account)
+        {
+            var storedAccount = FindAccountsForService(serviceName).FirstOrDefault(ac => ac.Username == account);
+            if (storedAccount == null)
+                return true;
+
+            Delete(storedAccount, serviceName);
+
+            return true;
         }
 
         #region Port from Xamarin.Secutiry

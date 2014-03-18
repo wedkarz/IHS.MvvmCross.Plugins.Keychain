@@ -14,14 +14,19 @@ namespace IHS.MvvmCross.Plugins.Keychain.Touch
                 Account = account
             };
 
-            var newRecord = new SecRecord(SecKind.GenericPassword)
-            {
-                Service = serviceName,
-                Account = account,
-                ValueData = password != null ? NSData.FromString(password, NSStringEncoding.UTF8) : null
-            };
+            var updateCode = SecKeyChain.Remove(record);
 
-            var updateCode = SecKeyChain.Add(newRecord);
+            if (updateCode == SecStatusCode.Success || updateCode == SecStatusCode.ItemNotFound)
+            {
+                var newRecord = new SecRecord(SecKind.GenericPassword)
+                {
+                    Service = serviceName,
+                    Account = account,
+                    ValueData = password != null ? NSData.FromString(password, NSStringEncoding.UTF8) : null
+                };
+
+                updateCode = SecKeyChain.Add(newRecord);
+            }
 
             return updateCode == SecStatusCode.Success;
         }
