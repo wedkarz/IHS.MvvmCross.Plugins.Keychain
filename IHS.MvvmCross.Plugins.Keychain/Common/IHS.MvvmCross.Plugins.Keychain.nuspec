@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>IHS.MvvmCross.Plugins.Keychain</id>
-    <version>0.0.12</version>
+    <version>0.0.13</version>
     <title>MvvmCross - Keychain Plugin</title>
     <authors>Artur Rybak</authors>
     <projectUrl>https://github.com/wedkarz/IHS.MvvmCross.Plugins.Keychain</projectUrl>
