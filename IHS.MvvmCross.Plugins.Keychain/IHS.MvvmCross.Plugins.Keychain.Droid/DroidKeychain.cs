@@ -53,7 +53,7 @@ namespace IHS.MvvmCross.Plugins.Keychain.Droid
             }
         }
 
-        public bool SetPassword(string password, string serviceName, string account)
+		public bool SetPassword(string password, string serviceName, string account, bool enableTouchId = false)
         {
             var storedAccount = FindAccountsForService(serviceName).FirstOrDefault(ac => ac.Username == account);
             if (storedAccount != null)

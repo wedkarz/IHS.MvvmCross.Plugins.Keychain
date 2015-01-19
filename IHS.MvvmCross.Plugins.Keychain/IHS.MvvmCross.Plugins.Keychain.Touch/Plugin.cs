@@ -1,4 +1,4 @@
-﻿using Cirrious.CrossCore;
+using Cirrious.CrossCore;
 using Cirrious.CrossCore.Plugins;
 
 namespace IHS.MvvmCross.Plugins.Keychain.Touch

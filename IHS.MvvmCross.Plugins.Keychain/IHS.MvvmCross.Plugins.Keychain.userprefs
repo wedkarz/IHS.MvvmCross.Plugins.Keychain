@@ -1,0 +1,24 @@
+﻿<Properties StartupItem="IHS.MvvmCross.Plugins.Keychain/IHS.MvvmCross.Plugins.Keychain.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="IHS.MvvmCross.Plugins.Keychain.Touch/TouchKeychain.cs">
+    <Files>
+      <File FileName="IHS.MvvmCross.Plugins.Keychain.Touch/TouchKeychain.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="IHS.MvvmCross.Plugins.Keychain" expanded="True" />
+          <Node name="IHS.MvvmCross.Plugins.Keychain.Droid" expanded="True" />
+          <Node name="IHS.MvvmCross.Plugins.Keychain.Touch" expanded="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../2020Projects/qualboard-mobile-2.0/QualBoard.Mobile.Core/ViewModels/LifeNotesEntryViewModel.cs" line="31" offsetX="304" offsetY="450" expression="LifeNote" liveUpdate="False" />
+    <Watch file="../../../2020Projects/qualboard-mobile-2.0/QualBoard.Mobile.Core/Repositories/ServerRepository.cs" line="180" offsetX="833" offsetY="2685" expression="deserResponse" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+</Properties>
