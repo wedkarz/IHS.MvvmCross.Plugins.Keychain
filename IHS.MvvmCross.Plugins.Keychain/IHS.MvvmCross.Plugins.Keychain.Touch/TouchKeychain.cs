@@ -1,35 +1,61 @@
 ﻿using System;
-using MonoTouch.Foundation;
-using MonoTouch.Security;
+using Foundation;
+using Security;
+using UIKit;
 
 namespace IHS.MvvmCross.Plugins.Keychain.Touch
 {
     public class TouchKeychain : IKeychain
     {
-        public bool SetPassword(string password, string serviceName, string account)
-        {
-            var record = new SecRecord(SecKind.GenericPassword)
-            {
-                Service = serviceName,
-                Account = account
-            };
+		bool? _isIos8;
 
-            var updateCode = SecKeyChain.Remove(record);
+		public bool IsIos8
+		{
+			get { return (_isIos8 ?? (_isIos8 = Convert.ToInt16(UIDevice.CurrentDevice.SystemVersion.Split ('.')[0].ToString()) >= 8)).Value; }
+		}
 
-            if (updateCode == SecStatusCode.Success || updateCode == SecStatusCode.ItemNotFound)
-            {
-                var newRecord = new SecRecord(SecKind.GenericPassword)
-                {
-                    Service = serviceName,
-                    Account = account,
-                    ValueData = password != null ? NSData.FromString(password, NSStringEncoding.UTF8) : null
-                };
+		public bool SetPassword(string password, string serviceName, string account, bool enableTouchId = false)
+		{
+			var record = new SecRecord(SecKind.GenericPassword)
+			{
+				Service = serviceName,
+				Account = account
+			};
 
-                updateCode = SecKeyChain.Add(newRecord);
-            }
+			var updateCode = SecKeyChain.Remove(record);
 
-            return updateCode == SecStatusCode.Success;
-        }
+			SecRecord newRecord = null;
+
+			if (updateCode == SecStatusCode.Success || updateCode == SecStatusCode.ItemNotFound)
+			{
+				if (IsIos8 && enableTouchId)
+				{
+					var secObject = new SecAccessControl (SecAccessible.WhenPasscodeSetThisDeviceOnly, SecAccessControlCreateFlags.UserPresence);
+
+					newRecord = new SecRecord (SecKind.GenericPassword) 
+					{
+						Service = serviceName,
+						Account = account,
+						ValueData = password != null ? NSData.FromString (password, NSStringEncoding.UTF8) : null,
+						UseNoAuthenticationUI = true,
+						AccessControl = secObject
+					};
+				}
+				else
+				{
+					newRecord = new SecRecord (SecKind.GenericPassword) 
+					{
+						Service = serviceName,
+						Account = account,
+						ValueData = password != null ? NSData.FromString (password, NSStringEncoding.UTF8) : null
+					};
+				}
+
+				updateCode = SecKeyChain.Add(newRecord);
+			}
+
+			return updateCode == SecStatusCode.Success;
+		}
 
         public string GetPassword(string serviceName, string account)
         {
