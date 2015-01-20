@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHS.MvvmCross.Plugins.Keychain", "IHS.MvvmCross.Plugins.Keychain\IHS.MvvmCross.Plugins.Keychain.csproj", "{37A89484-2AD5-4BC9-951A-8AC233382529}"
 EndProject
@@ -24,24 +24,59 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "monodroid", "monodroid", "{
 		Common\monoandroid\KeychainPluginBootstrap.cs.pp = Common\monoandroid\KeychainPluginBootstrap.cs.pp
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHS.MvvmCross.Plugins.Keychain.WindowsPhone", "IHS.MvvmCross.Plugins.Keychain.WindowsPhone\IHS.MvvmCross.Plugins.Keychain.WindowsPhone.csproj", "{E824388D-A5B5-4A87-A953-4B31DD35B453}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windowsphone", "windowsphone", "{568969CB-8080-4CD7-B03F-5B21B38B18EC}"
+	ProjectSection(SolutionItems) = preProject
+		Common\windowsphone\KeychainPluginBootstrap.cs.pp = Common\windowsphone\KeychainPluginBootstrap.cs.pp
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{37A89484-2AD5-4BC9-951A-8AC233382529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{37A89484-2AD5-4BC9-951A-8AC233382529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37A89484-2AD5-4BC9-951A-8AC233382529}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{37A89484-2AD5-4BC9-951A-8AC233382529}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{37A89484-2AD5-4BC9-951A-8AC233382529}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37A89484-2AD5-4BC9-951A-8AC233382529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37A89484-2AD5-4BC9-951A-8AC233382529}.Release|ARM.ActiveCfg = Release|Any CPU
+		{37A89484-2AD5-4BC9-951A-8AC233382529}.Release|x86.ActiveCfg = Release|Any CPU
 		{F6305AF2-9006-4325-9AB5-D185707BBE05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F6305AF2-9006-4325-9AB5-D185707BBE05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6305AF2-9006-4325-9AB5-D185707BBE05}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{F6305AF2-9006-4325-9AB5-D185707BBE05}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{F6305AF2-9006-4325-9AB5-D185707BBE05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6305AF2-9006-4325-9AB5-D185707BBE05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6305AF2-9006-4325-9AB5-D185707BBE05}.Release|ARM.ActiveCfg = Release|Any CPU
+		{F6305AF2-9006-4325-9AB5-D185707BBE05}.Release|x86.ActiveCfg = Release|Any CPU
 		{C461123F-F90A-4562-BBA6-B8FCC153256A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C461123F-F90A-4562-BBA6-B8FCC153256A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C461123F-F90A-4562-BBA6-B8FCC153256A}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{C461123F-F90A-4562-BBA6-B8FCC153256A}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{C461123F-F90A-4562-BBA6-B8FCC153256A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C461123F-F90A-4562-BBA6-B8FCC153256A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C461123F-F90A-4562-BBA6-B8FCC153256A}.Release|ARM.ActiveCfg = Release|Any CPU
+		{C461123F-F90A-4562-BBA6-B8FCC153256A}.Release|x86.ActiveCfg = Release|Any CPU
+		{E824388D-A5B5-4A87-A953-4B31DD35B453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E824388D-A5B5-4A87-A953-4B31DD35B453}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E824388D-A5B5-4A87-A953-4B31DD35B453}.Debug|ARM.ActiveCfg = Debug|ARM
+		{E824388D-A5B5-4A87-A953-4B31DD35B453}.Debug|ARM.Build.0 = Debug|ARM
+		{E824388D-A5B5-4A87-A953-4B31DD35B453}.Debug|x86.ActiveCfg = Debug|x86
+		{E824388D-A5B5-4A87-A953-4B31DD35B453}.Debug|x86.Build.0 = Debug|x86
+		{E824388D-A5B5-4A87-A953-4B31DD35B453}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E824388D-A5B5-4A87-A953-4B31DD35B453}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E824388D-A5B5-4A87-A953-4B31DD35B453}.Release|ARM.ActiveCfg = Release|ARM
+		{E824388D-A5B5-4A87-A953-4B31DD35B453}.Release|ARM.Build.0 = Release|ARM
+		{E824388D-A5B5-4A87-A953-4B31DD35B453}.Release|x86.ActiveCfg = Release|x86
+		{E824388D-A5B5-4A87-A953-4B31DD35B453}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,5 +84,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{426534FD-E6C9-4B23-99B2-AF8CE0CB7016} = {ECA5EA11-ABE7-4DFC-AEDB-B7BB577345A8}
 		{048301F1-8198-42E7-861E-270B14B0E986} = {ECA5EA11-ABE7-4DFC-AEDB-B7BB577345A8}
+		{568969CB-8080-4CD7-B03F-5B21B38B18EC} = {ECA5EA11-ABE7-4DFC-AEDB-B7BB577345A8}
 	EndGlobalSection
 EndGlobal

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>IHS.MvvmCross.Plugins.Keychain</id>
-    <version>0.0.12</version>
+    <version>0.0.13</version>
     <title>MvvmCross - Keychain Plugin</title>
     <authors>Artur Rybak</authors>
     <projectUrl>https://github.com/wedkarz/IHS.MvvmCross.Plugins.Keychain</projectUrl>
@@ -17,7 +17,7 @@
   </metadata>
   <files>
     <!-- Core -->
-    <file src="..\IHS.MvvmCross.Plugins.Keychain\bin\Release\IHS.MvvmCross.Plugins.Keychain.dll" target="lib\portable-net45+sl4+wp71+win8+monoandroid+monotouch\IHS.MvvmCross.Plugins.Keychain.dll" />
+    <file src="..\IHS.MvvmCross.Plugins.Keychain\bin\Release\IHS.MvvmCross.Plugins.Keychain.dll" target="lib\portable-net45+sl4+wp8+win8+monoandroid+monotouch\IHS.MvvmCross.Plugins.Keychain.dll" />
 
     <!-- Droid -->
     <file src="monoandroid\KeychainPluginBootstrap.cs.pp" target="content\monoandroid\Bootstrap\KeychainPluginBootstrap.cs.pp" />
@@ -28,6 +28,11 @@
     <file src="monotouch\KeychainPluginBootstrap.cs.pp" target="content\monotouch\Bootstrap\KeychainPluginBootstrap.cs.pp" />
     <file src="..\IHS.MvvmCross.Plugins.Keychain.Touch\bin\iPhone\Release\IHS.MvvmCross.Plugins.Keychain.Touch.dll" target="lib\monotouch\IHS.MvvmCross.Plugins.Keychain.Touch.dll" />
     <file src="..\IHS.MvvmCross.Plugins.Keychain\bin\Release\IHS.MvvmCross.Plugins.Keychain.dll" target="lib\monotouch\IHS.MvvmCross.Plugins.Keychain.dll" />
-
+    
+    <!-- phone -->
+    <file src="windowsphone\KeychainPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\KeychainPluginBootstrap.cs.pp" />
+    <file src="..\IHS.MvvmCross.Plugins.Keychain\bin\Release\IHS.MvvmCross.Plugins.Keychain.dll" target="lib\wp8\IHS.MvvmCross.Plugins.Keychain.dll" />    
+    <file src="..\IHS.MvvmCross.Plugins.Keychain.WindowsPhone\bin\Release\IHS.MvvmCross.Plugins.Keychain.WindowsPhone.dll" target="lib\wp8\IHS.MvvmCross.Plugins.Keychain.WindowsPhone.dll" />
+    
   </files>
 </package>

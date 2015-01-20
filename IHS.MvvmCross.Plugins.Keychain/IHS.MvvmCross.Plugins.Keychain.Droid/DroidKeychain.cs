@@ -82,7 +82,7 @@ namespace IHS.MvvmCross.Plugins.Keychain.Droid
             if (storedAccount == null)
                 return true;
 
-            storedAccount.Password = null;
+            storedAccount.Password = string.Empty;
             Save(storedAccount, serviceName);
 
             return true;
