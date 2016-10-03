@@ -1,6 +1,7 @@
 using Android.App;
-using Cirrious.CrossCore;
-using Cirrious.CrossCore.Plugins;
+using MvvmCross.Core;
+using MvvmCross.Platform;
+using MvvmCross.Platform.Plugins;
 
 namespace IHS.MvvmCross.Plugins.Keychain.Droid
 {
