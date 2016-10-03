@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using Android.Content;
 using Android.Runtime;
-using Cirrious.CrossCore;
-using Cirrious.CrossCore.Droid;
+using MvvmCross.Core;
+using MvvmCross.Droid;
 using Java.IO;
 using Java.Security;
 using Javax.Crypto;
-
+using MvvmCross.Platform;
+using MvvmCross.Platform.Droid;
 
 namespace IHS.MvvmCross.Plugins.Keychain.Droid
 {
